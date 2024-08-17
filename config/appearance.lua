@@ -1,26 +1,17 @@
-local wezterm = require('wezterm')
-local gpu_adapters = require('utils.gpu_adapter')
-local colors = require('colors.custom')
-
 return {
+   color_scheme = "catppuccin-macchiato",
+   enable_tab_bar = false,
    animation_fps = 240,
    max_fps = 240,
-   front_end = 'WebGpu',
-   webgpu_power_preference = 'HighPerformance',
-   webgpu_preferred_adapter = gpu_adapters:pick_best(),
+   audible_bell = "Disabled",
    window_close_confirmation = 'NeverPrompt',
-
-   -- color scheme
-   colors = colors,
-
-   -- scrollbar
-   enable_scroll_bar = true,
-
-   -- tab bar
-   enable_tab_bar = false,
-   hide_tab_bar_if_only_one_tab = false,
-   use_fancy_tab_bar = false,
-   tab_max_width = 25,
-   show_tab_index_in_tab_bar = false,
-   switch_to_last_active_tab_when_closing_tab = true,
+   win32_system_backdrop = 'Acrylic', -- Does not work with WebGpu frontend
+   window_background_opacity = 0.9,
+   window_padding = {
+     left = 0,
+     right = 0,
+     top = 0,
+     bottom = 0,
+   },
+   front_end = 'WebGpu',
 }
